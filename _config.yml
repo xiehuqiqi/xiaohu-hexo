@@ -2,54 +2,177 @@
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
-# Site
-title: Hexo
-subtitle: ''
-description: ''
-keywords:
-author: John Doe
-language: en
-timezone: ''
+# Site 基本设置
+# title
+# 网站标题
+title: 小狐窝
+
+# subtitle
+# 网站副标题
+subtitle: 用梦想点亮世界
+
+# description
+# 网站描述
+# description 主要用于SEO，
+# 告诉搜索引擎一个关于您站点的简单描述，
+# 通常建议在其中包含您网站的关键词。
+description: 用心记录生活的每一刻
+
+# keywords
+# 网站的关键词。支持多个关键词。
+keywords: 梦想  blog 博客
+
+# author
+# 您的名字
+# author 参数用于主题显示文章的作者。
+author: lin xiaohu
+
+# language
+# 网站使用的语言。对于简体中文用户来说，使用不同的主题可能需要设置成不同的值，
+# 请参考你的主题的文档自行设置，常见的有 zh-Hans和 zh-CN。
+language: zh-cn
+
+# timezone
+# 网站时区。Hexo 默认使用您电脑的时区。
+# 请参考 时区列表 进行设置，如 America/New_York, Japan, 和 UTC 。
+# 一般的，对于中国大陆地区可以使用 Asia/Shanghai。
+timezone: Asia/Shanghai
+
+
+
+
+
+
+
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
-permalink: :year/:month/:day/:title/
+# url
+# 网址, 必须以 http://
+# 或 https:// 开头
+url: https://hexo.xiaohu.dedyn.io
+
+# root
+# 网站根目录
+root: /
+
+# permalink
+# 文章的 永久链接 格式
+# :year	文章的发表年份（4 位数）
+# :month	文章的发表月份（2 位数）
+# :i_month	文章的发表月份（不含前导零）
+# :day	文章的发表日期 (2 位数)
+# :i_day	文章的发表日期（不含前导零）
+# :hour	文章发表时的小时 (2 位数)
+# :minute	文章发表时的分钟 (2 位数)
+# :second	文章发表时的秒钟 (2 位数)
+# :title	文件名称 (相对于 “source/_posts/“ 文件夹)
+# :name	文件名称
+# :post_title	文章标题
+# :id	文章 ID (清除缓存时不具有持久性)
+# :category	分类。如果文章没有分类，则是 default_category 配置信息。
+# :hash	文件名（与 :title 相同）和日期的 SHA1 哈希值（12位16进制数）
+permalink: posts/:year/:hash/
+
+# permalink_defaults
+# 永久链接中各部分的默认值
 permalink_defaults:
+
 pretty_urls:
-  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
-  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+  trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: false # Set to false to remove trailing '.html' from permalinks
 
 # Directory
+# source_dir
+# 资源文件夹，这个文件夹用来存放内容
 source_dir: source
+
+# public_dir
+# 公共文件夹，这个文件夹用于存放生成的站点文件
 public_dir: public
+
+# tag_dir
+# 标签文件夹
 tag_dir: tags
+
+# archive_dir
+# 归档文件夹
 archive_dir: archives
+
+# category_dir
+# 分类文件夹
 category_dir: categories
+
+# code_dir
+# Include code 文件夹，source_dir 下的子目录
 code_dir: downloads/code
+
+# i18n_dir
+# 国际化（i18n）文件夹
 i18n_dir: :lang
-skip_render:
+
+# skip_render
+# 跳过指定文件的渲染。匹配到的文件将会被不做改动地复制到 public 目录中。您可使用 glob 表达式来匹配路径。
+skip_render: .assets/**/**/*
 
 # Writing
+# new_post_name
+# 新文章的文件名称	:title.md
 new_post_name: :title.md # File name of new posts
+
+# default_layout
+# 预设布局
 default_layout: post
+
+# auto_spacing
+# 在中文和英文之间加入空格	false
+auto_spacing: false
+
+# titlecase
+# 把标题转换为
 titlecase: false # Transform title into titlecase
+
+# external_link	在新标签中打开链接	true
+# external_link.enable	在新标签中打开链接	true
+# external_link.field	对整个网站（site）生效或仅对文章（post）生效	site
+# external_link.exclude	需要排除的域名。主域名和子域名如 www 需分别配置	[]
 external_link:
   enable: true # Open external links in new tab
   field: site # Apply to the whole site
   exclude: ''
-filename_case: 0
+
+# filename_case
+# 把文件名称转换为 (1) 小写或 (2) 大写	0
+filename_case: 1
+
+# render_drafts
+# 显示草稿	false
 render_drafts: false
-post_asset_folder: false
+
+# post_asset_folder
+# 启动 Asset 文件夹
+post_asset_folder: true
+
+# relative_link
+# 把链接改为与根目录的相对位址	false
 relative_link: false
+
+# future
+# 显示未来的文章	true
 future: true
+
+# highlight
+# 代码块的设置, 请参考 Highlight.js 进行设置
 highlight:
   enable: true
-  line_number: true
+  line_number: false
   auto_detect: false
   tab_replace: ''
   wrap: true
   hljs: false
+
+# prismjs
+# 代码块的设置, 请参考 PrismJS 进行设置
 prismjs:
   enable: false
   preprocess: true
@@ -62,12 +185,17 @@ prismjs:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 10
+  per_page: 8
   order_by: -date
 
 # Category & Tag
+#  default_category	默认分类	uncategorized
 default_category: uncategorized
+
+#  category_map	分类别名
 category_map:
+
+#  tag_map	标签别名
 tag_map:
 
 # Metadata elements
@@ -78,8 +206,14 @@ meta_generator: true
 ## Hexo uses Moment.js to parse and display date
 ## You can customize the date format as defined in
 ## http://momentjs.com/docs/#/displaying/format/
+
+#  date_format	日期格式	YYYY-MM-DD
 date_format: YYYY-MM-DD
+
+#  time_format	时间格式	HH:mm:ss
 time_format: HH:mm:ss
+
+#  updated_option	当 Front Matter 中没有指定 updated 时 updated 的取值	mtime
 ## updated_option supports 'mtime', 'date', 'empty'
 updated_option: 'mtime'
 
@@ -97,7 +231,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: butterfly
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
