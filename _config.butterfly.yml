@@ -275,7 +275,7 @@ footer:
 
 aside:
   enable: true
-  hide: false
+  hide: true
   button: true
   mobile: true # display on mobile
   position: right # left or right
@@ -338,7 +338,7 @@ busuanzi:
 # Time difference between publish date and now (網頁運行時間)
 # Formal: Month/Day/Year Time or Year/Month/Day Time
 runtimeshow:
-  enable: true
+  enable: false
   publish_date: 23/08/2023 00:00:00
 
 # Aside widget - Newest Comments
